@@ -28,9 +28,9 @@ class Television:
         Initializes a new Television object with default settings.
         """
         self.__status = False  # TV starts off
-        self.__muted = False
-        self.__volume = Television.min_volume
-        self.__channel = Television.min_channel
+        self.__muted = False # TV Stats unmuted
+        self.__volume = Television.min_volume # TV Starts at the min volume
+        self.__channel = Television.min_channel # TV starts at the min channel
 
     def power(self) -> None:
         """
@@ -47,7 +47,8 @@ class Television:
 
     def channel_up(self) -> None:
         """
-        Increases the TV channel. Wraps around to the minimum channel if at the maximum.
+        Increases the TV channel.
+        Wraps around to the minimum channel if at the maximum.
         """
         if self.__status:
             if self.__channel == Television.max_channel:
